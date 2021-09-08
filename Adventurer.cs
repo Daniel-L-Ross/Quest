@@ -25,12 +25,8 @@ namespace Quest
 
         public string GetDescription()
         {
-            string colors = "";
-            foreach (string color in ColorfulRobe.Colors)
-            {
-                colors += color;
-            }
-            return $"Adventurer, {Name}, is wearing a ";
+            string colors = string.Join(", ", ColorfulRobe.Colors);
+            return $"Adventurer, {Name}, is wearing a {colors} robe that is {ColorfulRobe.Length} inches long.";
         }
 
         // This method returns a string that describes the Adventurer's status
