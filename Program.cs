@@ -63,6 +63,8 @@ namespace Quest
                 NewHat.ShininessLevel = 5;
                 Adventurer theAdventurer = new Adventurer(adventurerName, NewRobe, NewHat);
                 Console.WriteLine(theAdventurer.GetDescription());
+
+                Prize prize = new Prize("A copper coin.");
                 // A list of challenges for the Adventurer to complete
                 // Note we can use the List class here because have the line "using System.Collections.Generic;" at the top of the file.
                 List<Challenge> challenges = new List<Challenge>()
@@ -94,7 +96,7 @@ namespace Quest
                 {
                     Console.WriteLine("I guess you did...ok? ...sorta. Still, you should get out of my sight.");
                 }
-
+                prize.ShowDescription(theAdventurer);
                 Console.WriteLine("Would you like to keep playing? enter 'Yes' or 'No'.");
 
                 string playerResponse = Console.ReadLine().ToUpper();
@@ -114,14 +116,5 @@ namespace Quest
                 }
             }
         }
-        // Console.WriteLine("Thanks for playing. Would you like to play again? Enter 1 to play again, or anything else to exit.");
-
-        // int numResponse;
-        // bool isNumber = int.TryParse(playerResponse, out numResponse);
-
-        // if (isNumber && numResponse == 1)
-        // {
-        //     main();
-        //     }
     }
 }
